@@ -1,52 +1,70 @@
 import React from "react"
 import { Dimensions, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import Subheader from "./Subheader.component";
 
-export default function LoginForm(props: any) {
+
+export default function Cadastro(props: any) {
+    const { navigation } = props;
+  
     return <View style={styles.container}>
-        <View style={styles.fields}>
+      
+      {/* <Text>Cadastro ...</Text>
+      <TouchableOpacity onPress={()=> navigation.navigate("Login")}>
+        <Text>Go login...</Text>
+      </TouchableOpacity> */}
+<Subheader titulo={"Bem vindo!"} subtitulo={"a tela de Cadastro!"} />
+
+      <View style={styles.fields}>
             <View style={styles.filler}></View>
             <TextInput
                 style={styles.input}
-                placeholder='nome de usuário'
+                placeholder='Nome'
                 autoCapitalize="none"
                 allowFontScaling={true}
                 secureTextEntry={false} />
             <TextInput
                 style={styles.input}
-                placeholder='senha'
+                placeholder='Sobrenome'
+                autoCapitalize="none"
+                allowFontScaling={true}
+                secureTextEntry={false} />
+            <TextInput
+                style={styles.input}
+                placeholder='Data de Nascimento'
+                autoCapitalize="none"
+                allowFontScaling={true}
+                secureTextEntry={false} />
+            <TextInput
+                style={styles.input}
+                placeholder='Senha'
                 autoCapitalize="none"
                 allowFontScaling={true}
                 secureTextEntry={true} />
             <TouchableOpacity
-                style={styles.forgetPasswordLink}
-                onPress={() => alert('Esqueci a senha!')}
+                style={styles.btnLogin}
+                onPress={() => alert('Cadastro efetuado com sucesso!')}
             >
-                <Text style={styles.accountActionText}>
-                    Esqueci a senha
+                <Text style={styles.btnLoginText}>
+                    Criar Conta
+                </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+                style={styles.btnLogin}
+                onPress={() => navigation.navigate("Login")}
+                // <TouchableOpacity onPress={()=> navigation.navigate("Login")}>
+            >
+                <Text style={styles.btnLoginText}>
+                    Cancelar
                 </Text>
             </TouchableOpacity>
             <View style={styles.filler}></View>
         </View>
-        <View style={styles.actions}>
-            <TouchableOpacity
-                style={styles.btnLogin}
-                onPress={() => props.navigation.navigate("Home")}
-            >
-                <Text style={styles.btnLoginText}>Entrar</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-                style={styles.createAccountLink}
-                onPress={() => props.navigation.navigate("Cadastro")}
-            >
-                <Text style={styles.accountActionText}>
-                    Criar minha conta
-                </Text>
-            </TouchableOpacity>
-        </View>
-    </View>
-}
 
-const styles = StyleSheet.create({
+
+    </View>
+  }
+
+  const styles = StyleSheet.create({
     container: {
         paddingLeft: "5%",
         paddingRight: "5%",
@@ -55,8 +73,15 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         alignContent: 'center',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        backgroundColor: '#FFF'
     },
+    innerContainer: {
+        flex: 1,
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+      },
     fields: {
         display: 'flex',
         flex: 5,
@@ -90,15 +115,19 @@ const styles = StyleSheet.create({
         justifyContent: "flex-start"
     },
     btnLogin: {
-        backgroundColor: "#42B0BF",
+        backgroundColor: "#FF00FF",
         width: Dimensions.get('screen').width * 0.9,
         height: Dimensions.get('screen').height * 0.08,
         alignContent: 'center',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        padding: 2,
+        margin:2
     },
     btnLoginText: {
         color: "#fff",
         fontSize: 16
     }
 });
+
+  

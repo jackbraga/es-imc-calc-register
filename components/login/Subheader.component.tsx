@@ -8,8 +8,9 @@ import {
 
 export default function Subheader(props: any) {
     return (<View style={styles.container}>
-        <Text style={styles.primary}>Seja bem vindo!</Text>
-        <Text style={styles.secondary}>Faça seu login para continuar...</Text>
+        <Text style={styles.primary}>{props.titulo}</Text>
+        {/* <Text style={styles.secondary}>Faça seu login para continuar...</Text> */}
+        <Text style={styles.secondary}>{props.subtitulo}</Text>
     </View>);
 }
 

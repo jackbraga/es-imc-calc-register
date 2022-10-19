@@ -15,7 +15,7 @@ export default function Login(props: any) {
   
     return <View style={styles.container}>
       <View style={styles.mainContent}>
-        <Subheader />
+        <Subheader titulo={"Bem vindo!"} subtitulo={"A tela de Login!"} />
         <LoginForm navigation={props.navigation}/>
       </View>
         <Footer />

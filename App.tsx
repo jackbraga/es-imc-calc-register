@@ -1,5 +1,6 @@
 import Header from './components/shared/Header.component';
 import Login from './components/login/Login.page';
+import Cadastro from './components/login/Cadastro.component';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -8,7 +9,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-function Home(props) {
+function Home(props: any) {
   const { navigation } = props;
 
   return <View style={styles.innerContainer}>
@@ -35,6 +36,7 @@ export default function App() {
             }}>
             <Stack.Screen name="Login" component={Login} />
             <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen name="Cadastro" component={Cadastro} />
           </Stack.Navigator>
         </NavigationContainer>
         <StatusBar style="auto" />
